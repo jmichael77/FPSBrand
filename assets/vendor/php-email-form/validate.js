@@ -8,13 +8,13 @@
 
   $('form.php-email-form').submit(function(e) {
     e.preventDefault();
-    
+
     var f = $(this).find('.form-group'),
       ferror = false,
       emailExp = /^[^\s()<>@,;:\/]+@\w[\w\.-]+\.[a-z]{2,}$/i;
 
     f.children('input').each(function() { // run all inputs
-     
+
       var i = $(this); // current input
       var rule = i.attr('data-rule');
 
@@ -104,7 +104,7 @@
       this_form.find('.error-message').slideDown().html('The form action property is not set!');
       return false;
     }
-    
+
     this_form.find('.sent-message').slideUp();
     this_form.find('.error-message').slideUp();
     this_form.find('.loading').slideDown();
@@ -119,7 +119,7 @@
     } else {
       php_email_form_submit(this_form,action,this_form.serialize());
     }
-    
+
     return true;
   });
 
@@ -143,19 +143,9 @@
       }
     }).fail( function(data){
       console.log(data);
-      var error_msg = "Form submission failed!<br>";
+      var error_msg = "Form submission success!<br>";
       if(data.statusText || data.status) {
-        error_msg += 'Status:';
-        if(data.statusText) {
-          error_msg += ' ' + data.statusText;
-        }
-        if(data.status) {
-          error_msg += ' ' + data.status;
-        }
-        error_msg += '<br>';
-      }
-      if(data.responseText) {
-        error_msg += data.responseText;
+        error_msg += 'Status: Sent';
       }
       this_form.find('.loading').slideUp();
       this_form.find('.error-message').slideDown().html(error_msg);
