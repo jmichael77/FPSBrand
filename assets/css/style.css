@@ -233,7 +233,7 @@ h1, h2, h3, h4, h5, h6 {
 .mobile-nav-toggle {
   position: fixed;
   right: 15px;
-  top: 20px;
+  top: 25px;
   z-index: 9998;
   border: 0;
   background: none;
@@ -253,7 +253,7 @@ h1, h2, h3, h4, h5, h6 {
   position: fixed;
   top: 55px;
   right: 15px;
-  bottom: 15px;
+  bottom: 490px;
   left: 15px;
   z-index: 9999;
   overflow-y: auto;
@@ -982,6 +982,9 @@ section {
 /*--------------------------------------------------------------
 # Portfolio
 --------------------------------------------------------------*/
+#portfolio {
+  padding-bottom: 30px;
+}
 .portfolio .portfolio-item {
   margin-bottom: 30px;
 }
@@ -1614,4 +1617,9 @@ section {
 
 #footer .footer-links a:hover {
   color: #3498db;
+}
+
+#bootstrapmade {
+  color: #222222;
+  cursor: default;
 }
